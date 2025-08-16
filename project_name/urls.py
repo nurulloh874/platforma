@@ -28,20 +28,20 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', views.register_view, name='register'),
+    path('', include('app_name.urls')),
     path('register/', register_view, name='register'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('profile/', profile_view, name='profile'),
     path('project-upload/', project_upload_view, name='project_upload'),
+    path('index/', views.index, name='home'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
 ]
 
 
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('asosiy.urls')),
-]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -46,3 +46,15 @@ def project_upload_view(request):
     else:
         form = ProjectForm()
     return render(request, 'project_upload.html', {'form': form})
+
+
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'templates/index.html')
+
+def about(request):
+    return render(request, 'templates/about.html')
+
+def contact(request):
+    return render(request, 'templates/contact.html')
